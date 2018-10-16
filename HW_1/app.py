@@ -11,7 +11,7 @@ import sqlite3
 class Work(object):
     def __init__(self, args):
         self.args = args
-    
+
     def result(self):
         con = sqlite3.connect('test.db')
         cur = con.cursor()
@@ -21,7 +21,7 @@ class Work(object):
                 string = string + ' AND ' + WORK[self.args['TYPE']][1][i].format(self.args[i])
         cur.execute(WORK[self.args['TYPE']][0].format(string))
         results = ['</td><td>'.join(str(j) for j in i) for i in [WORK[self.args['TYPE']][2]]+cur.fetchall()]
-        
+
         html_part='<table>'
         for t in results:
             html_part=html_part + '<tr><td>' + t + '</td></tr>'
@@ -31,7 +31,7 @@ class Work(object):
 class Student(object):
     def __init__(self, args):
         self.args = args
-    
+
     def result(self):
         con = sqlite3.connect('test.db')
         cur = con.cursor()
@@ -41,16 +41,16 @@ class Student(object):
                 string = string + ' AND ' + STUDENT[self.args['TYPE']][1][i].format(self.args[i])
         cur.execute(STUDENT[self.args['TYPE']][0].format(string))
         results = ['</td><td>'.join(str(j) for j in i) for i in [STUDENT[self.args['TYPE']][2]]+cur.fetchall()]
-        
+
         html_part='<table>'
         for t in results:
             html_part=html_part + '<tr><td>' + t + '</td></tr>'
         html_part=html_part + '</table>'
         return html_part
-    
+
         return results
         return [STUDENT[self.args['TYPE']][0].format(string)]
-            
+
 
 @app.route('/',  methods=['GET'])
 def index():
@@ -61,7 +61,7 @@ def index():
             query = Student(request.args)
         result = query.result()
         return render_template('index.html', result=result)
-    return render_template('index.html',result=[])
+    return render_template('index.html',result='')
 
 @app.route('/add',  methods=['GET'])
 def add():
@@ -86,15 +86,14 @@ def add():
                                            str(request.args['mark'])))
             con.commit()
         return render_template('add.html', result=['Результат успешно добавлен'])
-    return render_template('add.html',result=[])
+    return render_template('add.html',result='')
 
 @app.route('/edit',  methods=['GET'])
 def edit():
     if request.args:
-        
+
         return render_template('edit.html', result=result)
-    return render_template('edit.html',result=[])
+    return render_template('edit.html',result='')
 
 if __name__ == '__main__':
     app.run(host='localhost', port=5005, debug=True)
-    
