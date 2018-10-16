@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Add page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<table width=20%>
+    <tr> <td width=5%>
+        <a href='/'> <b>Поиск</b> </a> </td>
+        <td width=5%>
+            <a href='/add'> <b>Добавить</b> </a> </td>
+    </tr>
+    </table>
+<table>
+<tr>
+    <td width=33%>
+<form>
+    Добавить тест
+<table>
+    <tr valign='top'>
+        <td>
+            Дисциплина
+        </td>
+        <td>
+            <input type="text" name="discipline"></input> </td>
+    </tr>
+    <tr>
+        <td>
+            Имя работы: 
+        </td>
+        <td>
+            <input type="text" name="t_name"></input> 
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Дата (2018-10-10): 
+        </td>
+        <td>
+            <input type="text" name="c_date"></input> 
+        </td>
+    </tr>
+    <tr>
+        <td> Текст работы: </td>
+        <td> <textarea type="text" name="task_text"></textarea>
+</td>
+    </tr>
+        <td align='center'>
+            <input type="hidden" name="what" value="TEST">
+            <button type="submit">Add</button> </td>
+    </tr>
+    </table>
+</form>
+</td>
+
+<td width=33% valign='top'>
+    <form>
+    Добавить результат
+    <table>
+         <tr>
+            <td> ID теста</td>
+            <td> <input type="text" name="id_test"></input><br></td>
+        </tr>
+         <tr>
+            <td> ID студента </td>
+            <td> <input type="text" name="id_student"></input><br></td>
+        </tr>
+         <tr>
+            <td> Оценка </td>
+            <td> <input type="text" name="mark"></input><br></td>
+        </tr>
+        <tr>
+            <input type="hidden" name="what" value="RESULTS">
+            <td><button type="submit">Add</button> </td>
+        </tr>
+</table>
+</form>
+</td>
+<td width=33% valign='top'>
+    <form>
+    Добавить студента
+    <table>
+         <tr>
+            <td> Фамилия и имя студента:</td>
+            <td> <input type="text" name="s_name"></input><br></td>
+         </tr>
+         <tr>
+            <td> Курс: </td>
+            <td> <select name="s_course">
+                      <option value=1>1</option>
+                      <option value=2>2</option>
+                      <option value=3>3</option>
+                      <option value=4>4</option>
+                      <option value=5>5</option>
+                    </select></td>
+        </tr>
+         <tr>
+            <td> Степень:</td>
+            <td> 
+                <select name="s_degree">
+                  <option value="бак">бак</option>
+                  <option value="маг">маг</option>
+                </select>
+</td>
+        </tr>
+         <tr>
+            <td> Образовательная программа:</td>
+            <td> <input type="text" name="s_program"></input><br></td>
+        </tr>
+         <tr>
+             <input type="hidden" name="what" value="STUDENT">
+            <td><button type="submit">Add</button> </td>
+        </tr>
+</table>
+</form>
+</td>
+</tr>
+</table>
+
+{% for item in result %}
+{{item}} <br>
+{% endfor %}
+
+
+</body>
+</html>
