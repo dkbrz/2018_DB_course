@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Search page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<form>
+	<table>
+		<tr>
+			<td>Тип</td>
+			<td><input type="checkbox" name="use_htype" value="True"></td> <td> <input type="text" name="htype"></td>
+		</tr>
+		<tr>
+			<td>Производитель</td>
+			<td><input type="checkbox" name="use_producer" value="True"></td> <td> <input type="text" name="producer"></td>
+		</tr>
+		<tr>
+			<td>Модель</td>
+			<td><input type="checkbox" name="use_model" value="True">  </td><td> <input type="text" name="model"></td>
+		</tr>
+		<tr>
+			<td>Дата выдачи</td>
+			<td><input type="checkbox" name="use_out_date" value="True"> </td><td> <input type="text" name="out_date"></td>	
+		</tr>
+		<tr>
+			<td>Имя</td>
+			<td><input type="checkbox" name="use_name" value="True">  </td><td> <input type="text" name="name"></td>
+		</tr>
+		<tr>
+			<td>Отдел</td>
+			<td><input type="checkbox" name="use_department" value="True">  </td><td> <input type="text" name="department"></td> 	
+		</tr>
+		<tr>
+			<td>Должность</td>
+			<td><input type="checkbox" name="use_position" value="True">  </td><td> <input type="text" name="position"></td> 
+		</tr>
+		<tr>
+			<td>Кабинет</td>
+			<td><input type="checkbox" name="use_office" value="True">  </td><td> <input type="text" name="office"></td>
+		</tr>
+		<tr> <td><button type="submit">Search</button></td>
+		</tr>
+	</table>
+</form>
+
+{{result|safe}}
+
+</body>
+</html>

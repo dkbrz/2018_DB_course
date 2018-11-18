@@ -1,0 +1,34 @@
+ноутбук,Lenovo,Yoga 370
+ноутбук,Lenovo,X1 Extreme
+ноутбук,Lenovo,X1 Carbon (6th)
+ноутбук,Lenovo,X1 Carbon (5th Gen)
+ноутбук,Lenovo,X1 Yoga (3rd Gen)
+ноутбук,Lenovo,X1 Yoga (2nd Gen)
+ноутбук,Lenovo,X380 Yoga
+ноутбук,Lenovo,X280
+ноутбук,Lenovo,X270
+ноутбук,Lenovo,T580
+ноутбук,Lenovo,T570
+ноутбук,Lenovo,T480
+ноутбук,Lenovo,T470p
+ноутбук,Lenovo,T470
+ноутбук,Lenovo,T480s
+ноутбук,Lenovo,P1
+ноутбук,Lenovo,P72
+ноутбук,Lenovo,P71
+ноутбук,Lenovo,P52
+ноутбук,Lenovo,P52s
+ноутбук,Lenovo,P51s
+ноутбук,Lenovo,P50s
+ноутбук,Lenovo,L580
+ноутбук,Lenovo,L570
+ноутбук,Lenovo,L470
+ноутбук,Lenovo,L380
+ноутбук,Lenovo,E585
+ноутбук,Lenovo,E485
+ноутбук,Lenovo,E570
+МФУ,HP,Ink Tank 319
+принтер,HP,LaserJet Pro M15w
+МФУ,Canon,PIXMA TS3140
+ноутбук,Apple,MacBook Air 13
+ноутбук,Apple,MacPro 15
