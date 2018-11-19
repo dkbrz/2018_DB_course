@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Search page</title>
+<title>EDIT</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
@@ -17,35 +17,20 @@
 <form>
 	<table>
 		<tr>
+			<td>оборудование</td>
+			<td> <input type="hidden" name="base" value='hardware'></td>
+		</tr><tr>
 			<td>ID</td>
-			<td> <input type="text" name="htype"></td>
-		</tr>
-		<tr>
-			<td>Имя</td>
-			<td> <input type="text" name="name"></td>
-		</tr>
-		<tr>
-			<td>Отдел</td>
-			<td> <input type="text" name="department"></td> 	
-		</tr>
-		<tr>
-			<td>Должность</td>
-			<td> <input type="text" name="position"></td> 
-		</tr>
-		<tr>
-			<td>Дата рождения</td>
-			<td> <input type="text" name="birth"></td>
-		</tr>
-		<tr>
-			<td>Кабинет</td>
-			<td> <input type="text" name="office"></td>
-		</tr>
-		<tr> <td><button type="submit">Search</button></td>
-		</tr>
+			<td> <input type="text" name="id_char" readonly value={{args['id']|safe}}></td>
+		</tr><tr>
+			<td>ID влдельца</td>
+			<td> <input type="text" name="owner" value={{args['owner']|safe}}></td>
+		</tr><tr>
+			<td>Дата выдачи</td>
+			<td> <input type="text" name="out_date" value={{args['out_date']|safe}}></td> 	
+		</tr><tr> <td><button type="submit" value='change'>Изменить оборудование</button></td></tr></form>
 	</table>
 </form>
-
-{{result|safe}}
 
 </body>
 </html>

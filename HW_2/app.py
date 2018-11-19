@@ -95,8 +95,7 @@ def workers():
     if request.args:
         #try:
             result = db.prettify_search(db.search(request.args))
-            #result = db.search(request.args)
-            return render_template('success.html')
+            render_template('workers.html',result=result)
         #except:
         #    return render_template('index.html',result='Что-то пошло не так или ваш запрос пуст.')
     return render_template('workers.html',result='')

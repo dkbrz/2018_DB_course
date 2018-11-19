@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Search page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<form>
+	<table>
+		<tr collapse='hidden'>
+			<td>ID</td>
+			<td> <input type="text" name="htype" value={{args['htype']|safe}}></td>
+		</tr>
+		<tr> <td><button type="submit">Search</button></td>
+		</tr>
+	</table>
+</form>
+
+{{result|safe}}
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Add page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<table width=20%>
+    <tr> 	<td width=5%> <a href='/'> <b>Поиск</b> </a> </td>
+     		<td width=5%> <a href='/add'> <b>Добавить</b> </a> </td>
+     		<td width=5%> <a href='/workers'> <b>Поиск работника</b> </a> </td>
+     		<td width=5%> <a href='/type'> <b>Поиск типа</b> </a> </td>
+     		<td width=5%> <a href='/hardware'> <b>Поиск оборудования</b> </a> </td>
+    </tr>
+    </table>
+<table>
+<tr>
+    <td width=33%>
+<form>
+    Добавить оборудование
+<table>
+    <tr valign='top'>
+        <td>
+            ID описания
+        </td>
+        <td>
+            <input type="text" name="id_char"></input> </td>
+    </tr>
+    <tr valign='top'>
+        <td>
+            Дата выдачи (2018-01-01)
+        </td>
+        <td>
+            <input type="text" name="out_date"></input> </td>
+    </tr>
+    <tr valign='top'>
+        <td>
+            Владелец (ID)
+        </td>
+        <td>
+            <input type="text" name="owner"></input> </td>
+    </tr>
+    </tr>
+        <td align='center'>
+            <input type="hidden" name="what" value="hardware">
+            <button type="submit">Add</button> </td>
+    </tr>
+    </table>
+</form>
+</td>
+
+<td width=33% valign='top'>
+    <form>
+    Добавить тип
+    <table>
+		<tr>
+			<td>Тип</td>
+			<td> <input type="text" name="htype"></td>
+		</tr>
+		<tr>
+			<td>Производитель</td>
+			<td> <input type="text" name="producer"></td> 	
+		</tr>
+		<tr>
+			<td>Модель</td>
+			<td> <input type="text" name="model"></td> 
+		</tr>
+		<tr>
+			<td>Год</td>
+			<td> <input type="text" name="year"></td>
+		</tr>
+        <tr>
+            <input type="hidden" name="what" value="type">
+            <td><button type="submit">Add</button> </td>
+        </tr>
+</table>
+</form>
+</td>
+<td width=33% valign='top'>
+    <form>
+    Добавить работника
+    <table>
+		<tr>
+			<td>ID</td>
+			<td> <input type="text" name="htype"></td>
+		</tr>
+		<tr>
+			<td>Имя</td>
+			<td> <input type="text" name="name"></td>
+		</tr>
+		<tr>
+			<td>Отдел</td>
+			<td> <input type="text" name="department"></td> 	
+		</tr>
+		<tr>
+			<td>Должность</td>
+			<td> <input type="text" name="position"></td> 
+		</tr>
+		<tr>
+			<td>Дата рождения</td>
+			<td> <input type="text" name="birth"></td>
+		</tr>
+		<tr>
+			<td>Кабинет</td>
+			<td> <input type="text" name="office"></td>
+		</tr>
+         <tr>
+             <input type="hidden" name="what" value="STUDENT">
+            <td><button type="submit">Add</button> </td>
+        </tr>
+</table>
+</form>
+</td>
+</tr>
+</table>
+
+
+</body>
+</html>
