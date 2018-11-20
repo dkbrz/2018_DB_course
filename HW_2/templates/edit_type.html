@@ -5,15 +5,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
-<table width=20%>
-    <tr> 	<td width=5%> <a href='/'> <b>Поиск</b> </a> </td>
-     		<td width=5%> <a href='/add'> <b>Добавить</b> </a> </td>
-     		<td width=5%> <a href='/workers'> <b>Поиск работника</b> </a> </td>
-     		<td width=5%> <a href='/type'> <b>Поиск типа</b> </a> </td>
-     		<td width=5%> <a href='/hardware'> <b>Поиск оборудования</b> </a> </td>
+<table width=50%>
+    <tr> 	<td width=10%> <a href='/'> <b>Соединенный поиск</b> </a> </td>
+     		<td width=10%> <a href='/add'> <b>Добавить</b> </a> </td>
+     		<td width=20%> <a href='/exact'> <b>Поиск и редактирование записей</b> </a> </td>
     </tr>
-    </table>
-<table>
+</table>
 <form>
 	<table>
 		<tr>
@@ -21,19 +18,20 @@
 			<td> <input type="hidden" name="base" value='workers'></td>
 		</tr><tr>
 			<td>ID</td>
-			<td> <input type="text" name="id" readonly value={{args['id']|safe}}></td>
+			<td> <input type="hidden" name="id" value={{args['id']|safe}}>
+				<input type="text" name="id" readonly value={{args['id']|safe}}></td>
 		</tr><tr>
 			<td>Тип</td>
-			<td> <input type="text" name="name" value={{args['name']|safe}}></td>
+			<td> <input type="text" name="htype" value={{args['htype']|safe}}></td>
 		</tr><tr>
 			<td>Производитель</td>
-			<td> <input type="text" name="department" value={{args['department']|safe}}></td> 	
+			<td> <input type="text" name="producer" value={{args['producer']|safe}}></td> 	
 		</tr><tr>
 			<td>Модель</td>
-			<td> <input type="text" name="position" value={{args['position']|safe}}></td> 
+			<td> <input type="text" name="model" value={{args['model']|safe}}></td> 
 		</tr><tr>
 			<td>Год</td>
-			<td> <input type="text" name="office" value={{args['office']|safe}}></td>
+			<td> <input type="text" name="year" value={{args['year']|safe}}></td>
 		</tr><tr> <td><button type="submit">Изменить тип</button></td></tr>
 	</table>
 </form>

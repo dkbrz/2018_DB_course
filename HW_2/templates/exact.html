@@ -1,56 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Add page</title>
+<title>Search page</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
+
 <table width=50%>
     <tr> 	<td width=10%> <a href='/'> <b>Соединенный поиск</b> </a> </td>
      		<td width=10%> <a href='/add'> <b>Добавить</b> </a> </td>
      		<td width=20%> <a href='/exact'> <b>Поиск и редактирование записей</b> </a> </td>
     </tr>
 </table>
+
 <table>
 <tr>
-    <td width=33%>
-<form>
-    Добавить оборудование
-<table>
-    <tr valign='top'>
-        <td>
-            ID описания
-        </td>
-        <td>
-            <input type="text" name="id_char"></input> </td>
-    </tr>
-    <tr valign='top'>
-        <td>
-            Дата выдачи (2018-01-01)
-        </td>
-        <td>
-            <input type="text" name="out_date"></input> </td>
-    </tr>
-    <tr valign='top'>
-        <td>
-            Владелец (ID)
-        </td>
-        <td>
-            <input type="text" name="owner"></input> </td>
-    </tr>
-    </tr>
-        <td align='center'>
-            <input type="hidden" name="what" value="hardware">
-            <button type="submit">Add</button> </td>
-    </tr>
-    </table>
-</form>
-</td>
+<td>
 
-<td width=33% valign='top'>
-    <form>
-    Добавить тип
-    <table>
+<table>
+<form>
+	<table>
+		<tr>
+			<td>ID объекта</td>
+			<td> <input type="text" name="id"></td>
+		</tr>
+		<tr>
+			<td>ID описания</td>
+			<td> <input type="text" name="id_char"></td>
+		</tr>
+		<tr>
+			<td>Дата выдачи оборудования<br>(YYYY-MM-DD)</td>
+			<td> <input type="text" name="out_date"></td> 	
+		</tr>
+		<tr>
+			<td>Текущий владелец</td>
+			<td> <input type="text" name="owner"></td>
+		</tr>
+		<tr> <input type="hidden" name="what" value="hardware"> <td><button type="submit">Search</button></td>
+		</tr>
+	</table>
+</form>
+</td> <td>
+<form>
+	<table>
+		<tr>
+			<td>ID</td>
+			<td> <input type="text" name="id"></td>
+		</tr>
 		<tr>
 			<td>Тип</td>
 			<td> <input type="text" name="htype"></td>
@@ -67,17 +63,18 @@
 			<td>Год</td>
 			<td> <input type="text" name="year"></td>
 		</tr>
-        <tr>
-            <input type="hidden" name="what" value="type">
-            <td><button type="submit">Add</button> </td>
-        </tr>
-</table>
+		<tr> <input type="hidden" name="what" value="type"> <td><button type="submit">Search</button></td>
+		</tr>
+	</table>
 </form>
-</td>
-<td width=33% valign='top'>
-    <form>
-    Добавить работника
-    <table>
+
+</td><td>
+<form>
+	<table>
+		<tr>
+			<td>ID</td>
+			<td> <input type="text" name="id"></td>
+		</tr>
 		<tr>
 			<td>Имя</td>
 			<td> <input type="text" name="name"></td>
@@ -98,15 +95,14 @@
 			<td>Кабинет</td>
 			<td> <input type="text" name="office"></td>
 		</tr>
-         <tr>
-             <input type="hidden" name="what" value="workers">
-            <td><button type="submit">Add</button> </td>
-        </tr>
-</table>
+		<tr> <input type="hidden" name="what" value="workers"> <td><button type="submit">Search</button></td>
+		</tr>
+	</table>
 </form>
 </td>
 </tr>
 </table>
+
 
 {{result|safe}}
 
