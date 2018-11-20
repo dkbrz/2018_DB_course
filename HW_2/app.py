@@ -1,4 +1,3 @@
- 
 from flask import Flask
 from flask import request, redirect
 from flask import render_template
@@ -60,7 +59,7 @@ class DB:
     def search(self, args):
         query = []
         check = []
-        columns = []
+        columns = ['<b>ID оборудования</b>']
         if 'use_htype' in args and args['use_htype'] == 'True':
             if args['htype'] != '':
                 query.append('type.htype LIKE \"%{}%\"'.format(args['htype']))
@@ -98,8 +97,8 @@ class DB:
             columns.append('<b>Должность</b>')
 
         if 'use_office' in args and args['use_office'] == 'True':
-            if args['office'] != '':
-                query.append('workers.office={}'.format(args['office']))
+            if args['office']:
+                query.append('workers.office={}'.format(int(args['office'])))
             check.append('workers.office')
             columns.append('<b>Кабинет</b>')
         string = 'SELECT DISTINCT hardware.id, {} FROM type \
@@ -130,8 +129,11 @@ class DB:
             query.append('workers.position LIKE \"%{}%\"'.format(args['position']))
         if args['birth'] != '':
             query.append('birth.birth = \"{}\"'.format(args['birth']))
-        if args['office'] != '':
-            query.append('workers.office={}'.format(args['office']))
+        if args['office']:
+            try:
+                query.append('workers.office={}'.format(args['office']))
+            except:
+                pass
 
         self.cur.execute('SELECT * FROM workers \
         WHERE {}'.format(' AND '.join(query)))
@@ -164,8 +166,8 @@ class DB:
         delete = '<a href="/delete?what=type&id={}"> Удалить </a>'
         edit = '<a href="/edit_type?id={}"> Рeдактировать </a>'
         query = []
-        columns = ['<b>Имя</b>', '<b>Имя</b>','<b>Департамент</b>',
-                   '<b>Должность</b>','<b>Дата рождения</b>','<b>Кабинет</b>',
+        columns = ['<b>ID</b>','<b>Тип</b>',
+                   '<b>Производитель</b>','<b>Модель</b>','<b>Год</b>',
                    '<b>Удалить</b>', '<b>Редактировать</b>']
         if args['id'] != '':
             query.append('id ={}'.format(args['id']))
@@ -207,7 +209,7 @@ def add():
     if request.args:
         if request.args['what'] == 'workers':
             db.create_worker(request.args['name'], request.args['department'], request.args['position'],
-                             request.args['birth'], request.args['office'])
+                             request.args['birth'], int(request.args['office']))
         elif request.args['what'] == 'hardware':
             db.create_hardware(request.args['id_char'], request.args['out_date'], request.args['owner'])
         elif request.args['what'] == 'type':
@@ -275,7 +277,7 @@ def edit_workers():
             args['department'] = '"'+result[1]+'"'
             args['position'] = '"'+result[2]+'"'
             args['birth'] = str(result[3])
-            args['office'] = result[4]
+            args['office'] = int(result[4])
             print (args)
             return render_template('edit_workers.html', args=args)
     return redirect('/exact')
@@ -299,8 +301,5 @@ def edit_type():
     return redirect('/exact')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
 
-
-if __name__ == '__main__':
-    app.run(host='localhost', port=5000, debug=True)

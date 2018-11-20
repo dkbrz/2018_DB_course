@@ -22,19 +22,19 @@
 	<table>
 		<tr>
 			<td>ID объекта</td>
-			<td> <input type="text" name="id"></td>
+			<td> <input type="int" name="id" placeholder="число"></td>
 		</tr>
 		<tr>
 			<td>ID описания</td>
-			<td> <input type="text" name="id_char"></td>
+			<td> <input type="int" name="id_char" placeholder="число"></td>
 		</tr>
 		<tr>
-			<td>Дата выдачи оборудования<br>(YYYY-MM-DD)</td>
-			<td> <input type="text" name="out_date"></td> 	
+			<td>Дата выдачи оборудования</td>
+			<td> <input type="text" name="out_date" placeholder="YYYY-MM-DD"></td>
 		</tr>
 		<tr>
 			<td>Текущий владелец</td>
-			<td> <input type="text" name="owner"></td>
+			<td> <input type="int" name="owner" placeholder="число"></td>
 		</tr>
 		<tr> <input type="hidden" name="what" value="hardware"> <td><button type="submit">Search</button></td>
 		</tr>
@@ -45,23 +45,23 @@
 	<table>
 		<tr>
 			<td>ID</td>
-			<td> <input type="text" name="id"></td>
+			<td> <input type="int" name="id" placeholder="число"></td>
 		</tr>
 		<tr>
 			<td>Тип</td>
-			<td> <input type="text" name="htype"></td>
+			<td> <input type="text" name="htype" placeholder="текст"></td>
 		</tr>
 		<tr>
 			<td>Производитель</td>
-			<td> <input type="text" name="producer"></td> 	
+			<td> <input type="text" name="producer" placeholder="текст"></td>
 		</tr>
 		<tr>
 			<td>Модель</td>
-			<td> <input type="text" name="model"></td> 
+			<td> <input type="text" name="model" placeholder="текст"></td>
 		</tr>
 		<tr>
 			<td>Год</td>
-			<td> <input type="text" name="year"></td>
+			<td> <input type="int" name="year" placeholder="число"></td>
 		</tr>
 		<tr> <input type="hidden" name="what" value="type"> <td><button type="submit">Search</button></td>
 		</tr>
@@ -73,27 +73,27 @@
 	<table>
 		<tr>
 			<td>ID</td>
-			<td> <input type="text" name="id"></td>
+			<td> <input type="int" name="id" placeholder="число"></td>
 		</tr>
 		<tr>
 			<td>Имя</td>
-			<td> <input type="text" name="name"></td>
+			<td> <input type="text" name="name" placeholder="текст"></td>
 		</tr>
 		<tr>
 			<td>Отдел</td>
-			<td> <input type="text" name="department"></td> 	
+			<td> <input type="text" name="department" placeholder="текст"></td>
 		</tr>
 		<tr>
 			<td>Должность</td>
-			<td> <input type="text" name="position"></td> 
+			<td> <input type="text" name="position" placeholder="текст"></td>
 		</tr>
 		<tr>
 			<td>Дата рождения</td>
-			<td> <input type="text" name="birth"></td>
+			<td> <input type="text" name="birth" placeholder="YYYY-MM-DD"></td>
 		</tr>
 		<tr>
 			<td>Кабинет</td>
-			<td> <input type="text" name="office"></td>
+			<td> <input type="int" name="office" placeholder="число"></td>
 		</tr>
 		<tr> <input type="hidden" name="what" value="workers"> <td><button type="submit">Search</button></td>
 		</tr>
@@ -108,3 +108,4 @@
 
 </body>
 </html>
+
